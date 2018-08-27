@@ -1,0 +1,65 @@
+blockquote,
+body,
+button,
+dd,
+dl,
+fieldset,
+figure,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+input,
+legend,
+ol,
+p,
+pre,
+td,
+textarea,
+th,
+ul,
+xmp {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html,
+#app{
+  @include wh($percent100);
+}
+
+html {
+  font-size: $browser-default-font-size;
+}
+
+.home{
+  @include wh($percent100);
+  @include position(rel);
+  .header{
+    width: $percent100;
+    height: pxTorem(80px);
+    background-color: $title;
+  }
+  .side{
+    @include position(abs);
+    top: pxTorem(80px);
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: pxTorem(80px);
+    background-color: $sidebg;
+  }
+  .wrapper{
+    @include position(abs);
+    top: pxTorem(80px);
+    left: pxTorem(80px);
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+}

@@ -1,0 +1,50 @@
+.navigation{
+  @include wh($percent100);
+  display: flex;
+}
+.vertical{
+  display: block;
+  .route{
+    width: pxTorem(80px);
+    height: pxTorem(80px);
+    cursor: pointer;
+    .link{
+      @include wh($percent100);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      i{
+        display: block;
+        width: pxTorem(50px);
+        height: pxTorem(50px);
+      }
+    }
+    .icon{
+      @include wh($percent100);
+    }
+    &:hover{
+      background-color: $navHover;
+    }
+  }
+  .active{
+    background-color: $active;
+  }
+}
+.across{
+  justify-content: flex-start;
+  align-items: center;
+  .route{
+    @include size();
+    padding: 0 pxTorem(25px);
+    cursor: pointer;
+    height: $percent100;
+    line-height: pxTorem(80px);
+    &:hover{
+      background-color: $sideHover;
+    }
+  }
+  .active{
+    background-color: $active;
+  }
+}

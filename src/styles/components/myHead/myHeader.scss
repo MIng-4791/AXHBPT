@@ -1,0 +1,25 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  color: $white;
+  @include position(rel);
+  .logo{
+    width: pxTorem(260px);
+    height: $percent100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: pxTorem(30px);
+    font-weight: 700;
+  }
+  .system{
+    width: pxTorem(300px);
+    height: $percent100;
+  }
+  .nav{
+    @include position(abs);
+    left: pxTorem(260px);
+    right: pxTorem(300px);
+    height: $percent100;
+  }
+}
