@@ -61,5 +61,11 @@ html {
     bottom: 0;
     right: 0;
     margin: auto;
+    .index{
+      @include wh($percent100);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }

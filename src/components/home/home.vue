@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import myHeader from '@/components/myHead/myHeader'
-import mySide from '@/components/mySide/mySide'
+import myHeader from '@/components/common/myHead/myHeader'
+import mySide from '@/components/common/mySide/mySide'
 export default {
   name: 'home',
   data () {

@@ -1,5 +1,6 @@
 @import "./components/common/common";
 @import "./components/home/home";
-@import "./components/myHead/myHeader";
-@import "./components/mySide/mySide";
-@import "./components/navigation/navigation";
+@import "./components/common/myHead/myHeader";
+@import "./components/common/mySide/mySide";
+@import "./components/common/navigation/navigation";
+@import "./components/common/popover/popover";

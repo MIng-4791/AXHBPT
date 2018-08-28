@@ -1,0 +1,17 @@
+.popover{
+  @include position(fix);
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: $popover_bg;
+  .pop-up{
+    @include wh($percent60);
+    background-color: $white;
+    @include position(abs);
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
