@@ -1,30 +1,43 @@
+$body_bg: #f5f4f9;
+$red: #fc7171;
+
 // header
-$header_bg: #069;
-$header_H: $pixel_80;
-$logo_W: $pixel_100 + $pixel_90 + $pixel_70;
+$header_bg: #3079ea;
+$header_H: $pixel_90 + 3px;
+$logo_W: $pixel_100 + $pixel_30 + ($pixel_10 / 2);
 $logo_size: $pixel_30;
-$navHover: #f9f;
-$nav_L: $pixel_100 + $pixel_90 + $pixel_70;
-$nav_R: $pixel_100 * 3;
-$userinfo_W: $pixel_100 * 3;
+$logo_bg: #2c73e9;
+$navHover: #3079ea;
+$border_col: #2c72e9;
+$nav_L: $pixel_100 + $pixel_30 + ($pixel_10 / 2);
+$nav_R: $pixel_100 * 5;
+$userinfo_W: $pixel_100 * 5;
+
 
 // 路由的样式
-$active: #99f;
-$route_W: $pixel_80;
-$route_H: $pixel_80;
-$link_i_W: $pixel_50;
+$actived: #3079ea;
+$route_W: $pixel_100 + $pixel_30 + ($pixel_10 / 2);
+$route_H: $pixel_100;
 $link_i_H: $pixel_50;
+$vertical_icon_size: $pixel_40;
 
 // 侧边栏(左)
-$side_Top: $pixel_80;
-$side_W: $pixel_80;
+$side_Top: $pixel_90 + 3px;
+$side_W: $pixel_100 + $pixel_30 + ($pixel_10 / 2);
 $sidebg: #666;
-$sideHover: #9f9;
+$side_size_col: #748088;
+$sideShadow_col: #ccc;
+$sideHover: #3588f0;
 
 // wrapper
-$wrapper_Top: $pixel_80;
-$wrapper_Left: $pixel_80;
+$wrapper_Top: $pixel_90 + 3px;
+$wrapper_Left: $pixel_100 + $pixel_30 + ($pixel_10 / 2);
 
+// index
+$pie_bar_H: $pixel_100 * 3 + $pixel_80 + 3px;
+$line_box_Top: $pixel_100 * 4 + $pixel_40 + 3px;
+$pie_box_W: $pixel_100 * 5 + $pixel_50;
+$bar_box_Left: $pixel_100 * 5 + $pixel_80;
 // 弹出框的遮罩层
 $popover_bg: rgba(102,102,102, .5);
 

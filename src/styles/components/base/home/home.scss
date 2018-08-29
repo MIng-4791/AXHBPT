@@ -31,6 +31,7 @@ body,
 html,
 #app{
   @include wh($percent100);
+  background-color: $body_bg;
 }
 
 html {
@@ -47,14 +48,13 @@ html {
   }
   .side{
     width: pxTorem($side_W);
-    background-color: $sidebg;
+    background-color: $white;
+    box-shadow: ($pixel_10 / 10) ($pixel_10 / 10) ($pixel_10 / 2) $sideShadow_col;
     @include adaptiveSize($side_Top, $null, $pixel_0, $null);
+    @include size();
   }
   .wrapper{
     @include adaptiveSize($wrapper_Top, $pixel_0, $pixel_0, $wrapper_Left);
-    .index, .system{
-      @include wh($percent100);
-      @include flex($center, $center, $null);
-    }
+
   }
 }

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import {lineOption, barOption, pieOption} from '@/api/config'
+import {lineOption, barOption, pieOption} from '@/api/option'
 // import axios from 'axios'
 Vue.use(Vuex)
 

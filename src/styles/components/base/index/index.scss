@@ -1,0 +1,12 @@
+.index{
+  padding: pxTorem($pixel_30);
+  box-sizing: border-box;
+  @include wh($percent100);
+  @include position(rel);
+  .pie-bar{
+    width: $percent100;
+    height: pxTorem($pie_bar_H);
+    margin-bottom: pxTorem($pixel_30);
+    @include position(rel);
+  }
+}

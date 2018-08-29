@@ -1,96 +1,90 @@
 <template lang="html">
-  <div class="chart" :id="id"></div>
+  <div :class="id+'-box'" >
+    <div class="title">
+      <span class="span-icon"></span>
+      <p>{{title}}</p>
+      <el-select v-model="selected" placeholder="" v-if="dropDown">
+        <el-option v-for="item in yearList" :key="item" :label="item+'年'" :value="item"></el-option>
+      </el-select>
+    </div>
+    <div class="chart-box">
+      <div class="chart" :id="id"></div>
+    </div>
+  </div>
+
 </template>
 
 <script>
 import echarts from '~/echarts/echarts.min.js'
+import {
+  mapState,
+  mapMutations
+} from 'vuex'
 export default {
-  props: ['id', 'option'],
+  props: ['id', 'title', 'option', 'dropDown'],
   data() {
     return {
-      Chart: null
+      Chart: null,
+      selected: '2018',
+      lineSeries: null,
+      yearList: [
+        '2018', '2017', '2016', '2015', '2014', '2013'
+      ]
     }
   },
   mounted() {
     this.Chart = echarts.init(document.getElementById(this.id));
-    this.Chart.setOption(this.option)
+    if (this.id == 'line') {
+      this.conformity(this.option)
+      this.Chart.setOption(this.lineSeries)
+    } else {
+      this.Chart.setOption(this.option)
+    }
     window.onresize = () => {
       this.Chart.resize()
     }
   },
+  computed: {
+    ...mapState([
+      'lineOption'
+    ]),
+  },
   methods: {
-    initechart() {
-      var option = {
-        title: {
-          // text: '折线图堆叠'
-        },
-        tooltip: {
-          trigger: 'axis'
-        },
-        legend: {
-          data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
-        },
-        grid: {
-          // left: '3%',
-          // right: '4%',
-          // bottom: '3%',
-          // containLabel: true
-        },
-        toolbox: {
-          feature: {
-            // saveAsImage: {}
+    conformity(json) {
+      this.lineSeries = this.lineOption
+      this.lineSeries.series = [{
+        name: json.name,
+        type: 'line',
+        smooth: true,
+        lineStyle: {
+          normal: {
+            width: 1
           }
         },
-        xAxis: {
-          name: '月份',
-          type: 'category',
-          boundaryGap: false,
-          data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
-        },
-        yAxis: {
-          name: '销量',
-          type: 'value'
-        },
-        series: [{
-            name: '邮件营销',
-            type: 'line',
-            stack: '总量',
-            data: [120, 132, 101, 134, 90, 230, 210]
-          },
-          {
-            name: '联盟广告',
-            type: 'line',
-            stack: '总量',
-            data: [220, 182, 191, 234, 290, 330, 310]
-          },
-          {
-            name: '视频广告',
-            type: 'line',
-            stack: '总量',
-            data: [150, 232, 201, 154, 190, 330, 410]
-          },
-          {
-            name: '直接访问',
-            type: 'line',
-            stack: '总量',
-            data: [320, 332, 301, 334, 390, 330, 320]
-          },
-          {
-            name: '搜索引擎',
-            type: 'line',
-            stack: '总量',
-            data: [820, 932, 901, 934, 1290, 1330, 1320]
+        areaStyle: {
+          normal: {
+            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+              offset: 0,
+              color: 'rgba(48,121,235, 0.3)'
+            }, {
+              offset: 0.8,
+              color: 'rgba(48,121,235, 0)'
+            }], false),
+            shadowColor: 'rgba(0, 0, 0, 0.1)',
+            shadowBlur: 10
           }
-        ]
-      };
+        },
+        itemStyle: {
+          normal: {
+            color: 'rgb(48,121,235)'
+          }
+        },
+        data: json.data
+      }]
     }
   }
 }
 </script>
 
 <style lang="css">
-.chart{
-  width: 500px;
-  height: 350px;
-}
 </style>

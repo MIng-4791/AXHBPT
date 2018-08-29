@@ -8,6 +8,7 @@ import store from '@/store/index'
 
 import 'babel-polyfill'
 import 'element-ui/lib/theme-chalk/index.css'
+import '~/font/iconfont.css'
 import './styles/style.scss'
 
 

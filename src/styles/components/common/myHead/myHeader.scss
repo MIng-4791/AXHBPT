@@ -2,16 +2,48 @@
   color: $white;
   @include position(rel);
   @include flex($between, $null, $null);
+  @include size();
   .logo{
     font-weight: 700;
     height: $percent100;
     width: pxTorem($logo_W);
     font-size: pxTorem($logo_size);
+    border-right: $border_col;
     @include flex($center, $center, $null);
+    background-color: $logo_bg;
+    background-image: url('/static/images/logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
   }
   .userinfo{
     height: $percent100;
     width: pxTorem($userinfo_W);
+    @include flex($around, $null, $null);
+    .user{
+      @include flex($center, $center, $null);
+      width: $percent50;
+      height: $percent100;
+      border-left: ($pixel_10 / 10) solid $border_col;
+      cursor: pointer;
+      img{
+        display: block;
+        width: $pixel_60;
+        height: $pixel_60;
+        border-radius: $percent50;
+        margin-right: $pixel_10;
+      }
+    }
+    .cut, .logout{
+      @include flex($center, $center, $null);
+      width: $percent50 / 2;
+      height: $percent100;
+      border-left: ($pixel_10 / 10) solid $border_col;
+      cursor: pointer;
+      i{
+        margin-right: $pixel_10;
+        @include size();
+      }
+    }
   }
   .nav{
     height: $percent100;

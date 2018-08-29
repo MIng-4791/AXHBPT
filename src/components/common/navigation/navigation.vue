@@ -1,13 +1,12 @@
 <template lang="html">
   <div class="navigation" :class="composeType">
     <template >
-      <div class="route" v-for="item in list" :class="sel == item.route ? 'active' : ''">
+      <div class="route" v-for="(item, index) in list" :class="sel == item.route ? 'actived' : ''">
         <router-link tag="div" class="link" :class="item.class" :to="{ name: item.route, query: {} }">
-          <template v-if="item.class == 'icon'">
-            <i :class="item.route"></i>
-          </template>
-          {{item.name}}
+          <i class="iconfont" :class="icon[index]"></i>
+          <p>{{item.name}}</p>
         </router-link>
+        <span class="pitch-on"></span>
       </div>
     </template>
   </div>
@@ -15,7 +14,7 @@
 
 <script>
 export default {
-  props: ['list', 'composeType'],
+  props: ['list', 'icon', 'composeType'],
   data() {
     return {
       sel: null,
@@ -29,8 +28,7 @@ export default {
       this.sel = this.$route.name
     }
   },
-  methods: {
-  }
+  methods: {}
 }
 </script>
 

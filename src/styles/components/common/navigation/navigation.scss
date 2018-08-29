@@ -4,42 +4,77 @@
 .vertical{
   display: block;
   .route{
+    cursor: pointer;
     width: pxTorem($route_W);
     height: pxTorem($route_H);
-    cursor: pointer;
+    color: $side_size_col;
+    @include position(rel);
+    @include flex($center, $center, $null);
     .link{
-      @include wh($percent100);
-      @include flex($center, $center, $wrap);
       i{
         display: block;
-        width: pxTorem($link_i_W);
+        width: $percent100;
         height: pxTorem($link_i_H);
+        font-size: $vertical_icon_size;
+        @include flex($center, $center, $wrap);
+        &.icon-houtaiyonghuguanli{
+          font-size: $pixel_60;
+        }
+        &.icon-shouye{
+          font-size: $pixel_70 / 2;
+        }
+      }
+      p{
+        width: $percent100;
+        text-align: center;
       }
     }
-    .icon{
-      @include wh($percent100);
+    .pitch-on{
+      display: inline-block;
+      width: $pixel_10 / 2;
+      height: $percent90;
+      background-color: $white;
+      @include position(abs);
+      left: $pixel_0;
+      top: $percent10 / 2;
     }
     &:hover{
-      background-color: $navHover;
+      color: $navHover;
     }
   }
-  .active{
-    background-color: $active;
+  .actived{
+    color: $actived;
+    .pitch-on{
+      background-color: $navHover;
+    }
   }
 }
 .across{
   @include flex($start, $center, $null);
   .route{
     @include size();
-    padding: 0 pxTorem($pixel_50 / 2);
+    padding: 0 pxTorem($pixel_60 / 2);
     cursor: pointer;
     height: $percent100;
-    line-height: pxTorem($pixel_80);
+    line-height: pxTorem($pixel_90);
+    .link{
+      @include flex($around, $center, $null);
+    }
+    i{
+      display: block;
+      width: $pixel_60;
+      height: $percent100;
+      @include flex($center, $center, $null);
+      font-size: $pixel_30;
+      &.icon-19{
+        font-size: $pixel_70 / 2;
+      }
+    }
     &:hover{
       background-color: $sideHover;
     }
   }
-  .active{
-    background-color: $active;
+  .actived{
+    background-color: $sideHover;
   }
 }

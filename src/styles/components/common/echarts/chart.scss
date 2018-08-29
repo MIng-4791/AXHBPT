@@ -1,0 +1,83 @@
+.pie-box{
+  padding: pxTorem($pixel_30 / 2);
+  padding-top: $pixel_0;
+  box-sizing: border-box;
+  width: $pie_box_W;
+  height: $percent100;
+  background-color: $white;
+  @include position(rel);
+  .title{
+    .span-icon{
+      background-color: $side_size_col;
+    }
+    p{
+      color: $side_size_col;
+    }
+  }
+}
+.bar-box{
+  padding: pxTorem($pixel_30 / 2);
+  padding-top: $pixel_0;
+  box-sizing: border-box;
+  background-color: $white;
+  @include adaptiveSize($pixel_0, $pixel_0, $pixel_0, $bar_box_Left);
+  .title{
+    .span-icon{
+      background-color: $header_bg;
+    }
+    p{
+      color: $header_bg;
+    }
+  }
+}
+.line-box{
+  padding: pxTorem($pixel_30 / 2);
+  padding-top: $pixel_0;
+  box-sizing: border-box;
+  @include adaptiveSize($line_box_Top, $pixel_30, $pixel_30, $pixel_30);
+  background-color: $white;
+  .title{
+    .span-icon{
+      background-color: $red;
+    }
+    p{
+      color: $red;
+    }
+  }
+}
+.title{
+  width: $percent100;
+  height: pxTorem($pixel_50);
+  border-bottom: ($pixel_10 / 10) solid $body_bg;
+  @include flex($start, $center, $null);
+  @include position(rel);
+  .span-icon{
+    display: inline-block;
+    width: pxTorem($pixel_60 / 10);
+    height: pxTorem($pixel_60 / 10 + $pixel_10);
+    border-radius: pxTorem($pixel_20 / 10);
+    margin-right: $pixel_10;
+  }
+  .el-select{
+    @include position(abs);
+    top: $pixel_10;
+    right: $pixel_10;
+    width: pxTorem($pixel_100);
+    @include size();
+    .el-input{
+      input{
+        height: pxTorem($pixel_30);
+      }
+      i{
+        line-height: pxTorem($pixel_30);
+      }
+    }
+  }
+}
+.chart-box{
+  @include adaptiveSize($pixel_50, $pixel_30/2, $pixel_30/2, $pixel_30/2);
+}
+.chart{
+  width: $percent100;
+  height: $percent100;
+}
