@@ -1,23 +1,19 @@
 .navigation{
   @include wh($percent100);
-  display: flex;
 }
 .vertical{
   display: block;
   .route{
-    width: pxTorem(80px);
-    height: pxTorem(80px);
+    width: pxTorem($route_W);
+    height: pxTorem($route_H);
     cursor: pointer;
     .link{
       @include wh($percent100);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
+      @include flex($center, $center, $wrap);
       i{
         display: block;
-        width: pxTorem(50px);
-        height: pxTorem(50px);
+        width: pxTorem($link_i_W);
+        height: pxTorem($link_i_H);
       }
     }
     .icon{
@@ -32,14 +28,13 @@
   }
 }
 .across{
-  justify-content: flex-start;
-  align-items: center;
+  @include flex($start, $center, $null);
   .route{
     @include size();
-    padding: 0 pxTorem(25px);
+    padding: 0 pxTorem($pixel_50 / 2);
     cursor: pointer;
     height: $percent100;
-    line-height: pxTorem(80px);
+    line-height: pxTorem($pixel_80);
     &:hover{
       background-color: $sideHover;
     }

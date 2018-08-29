@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import home from '@/components/home/home'
-import index from '@/components/index/index'
-import recharge from '@/components/recharge/recharge'
-import setting from '@/components/setting/setting'
-import system from '@/components/system/system'
-import zhxx from '@/components/zhxx/zhxx'
-import hbgl from '@/components/hbgl/hbgl'
-import qxgl from '@/components/qxgl/qxgl'
-import yhgl from '@/components/yhgl/yhgl'
-import zzjggl from '@/components/zzjggl/zzjggl'
+import home from '@/components/base/home/home'
+import index from '@/components/base/index/index'
+import recharge from '@/components/base/recharge/recharge'
+import setting from '@/components/base/setting/setting'
+import system from '@/components/base/system/system'
+import zhxx from '@/components/base/zhxx/zhxx'
+import hbgl from '@/components/base/hbgl/hbgl'
+import qxgl from '@/components/base/qxgl/qxgl'
+import yhgl from '@/components/base/yhgl/yhgl'
+import zzjggl from '@/components/base/zzjggl/zzjggl'
 Vue.use(Router)
 
 export default new Router({

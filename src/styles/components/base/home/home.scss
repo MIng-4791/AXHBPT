@@ -42,30 +42,19 @@ html {
   @include position(rel);
   .header{
     width: $percent100;
-    height: pxTorem(80px);
-    background-color: $title;
+    height: pxTorem($header_H);
+    background-color: $header_bg;
   }
   .side{
-    @include position(abs);
-    top: pxTorem(80px);
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    width: pxTorem(80px);
+    width: pxTorem($side_W);
     background-color: $sidebg;
+    @include adaptiveSize($side_Top, $null, $pixel_0, $null);
   }
   .wrapper{
-    @include position(abs);
-    top: pxTorem(80px);
-    left: pxTorem(80px);
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    .index{
+    @include adaptiveSize($wrapper_Top, $pixel_0, $pixel_0, $wrapper_Left);
+    .index, .system{
       @include wh($percent100);
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex($center, $center, $null);
     }
   }
 }

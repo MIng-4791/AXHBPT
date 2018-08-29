@@ -6,7 +6,7 @@
     <div class="nav">
       <my-nav :list="list" :composeType="'across'"></my-nav>
     </div>
-    <div class="system">
+    <div class="userinfo">
 
     </div>
   </div>

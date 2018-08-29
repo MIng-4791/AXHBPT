@@ -1,25 +1,20 @@
 .header{
-  display: flex;
-  justify-content: space-between;
   color: $white;
   @include position(rel);
+  @include flex($between, $null, $null);
   .logo{
-    width: pxTorem(260px);
-    height: $percent100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: pxTorem(30px);
     font-weight: 700;
-  }
-  .system{
-    width: pxTorem(300px);
     height: $percent100;
+    width: pxTorem($logo_W);
+    font-size: pxTorem($logo_size);
+    @include flex($center, $center, $null);
+  }
+  .userinfo{
+    height: $percent100;
+    width: pxTorem($userinfo_W);
   }
   .nav{
-    @include position(abs);
-    left: pxTorem(260px);
-    right: pxTorem(300px);
     height: $percent100;
+    @include adaptiveSize($null, $nav_R, $null, $nav_L);
   }
 }

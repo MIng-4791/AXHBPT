@@ -10,19 +10,64 @@ $percent40: 40%;
 $percent30: 30%;
 $percent20: 20%;
 $percent10: 10%;
+// 像素
+$pixel_100: 100px;
+$pixel_90: 90px;
+$pixel_80: 80px;
+$pixel_70: 70px;
+$pixel_60: 60px;
+$pixel_50: 50px;
+$pixel_40: 40px;
+$pixel_30: 30px;
+$pixel_20: 20px;
+$pixel_10: 10px;
+$pixel_0: 0px;
+$null: null;
 
-$title: #069;
-$sidebg: #666;
-$white: #fff;
-$navHover: #f9f;
-$sideHover: #9f9;
-$active: #99f;
-$popover_bg: rgba(102,102,102, .2);
 
-// 宽高
+$end: flex-end;
+$center: center;
+$start: flex-start;
+$between: space-between;
+$around: space-around;
+$wrap: wrap;
+
+/* 宽高 */
 @mixin wh($wh) {
   width: $wh;
   height: $wh;
+}
+
+// 自适应大小
+@mixin adaptiveSize($t, $r, $b, $l) {
+  @include position(abs);
+  @if ($t) {
+    top: pxTorem($t);
+  }
+  @if ($r) {
+    right: pxTorem($r);
+  }
+  @if ($b) {
+    bottom: pxTorem($b);
+  }
+  @if ($l) {
+    left: pxTorem($l);
+  }
+  margin: auto;
+}
+
+// flex布局
+@mixin flex($h, $v, $w) {
+  display: flex;
+  @if ($h) {
+    justify-content: $h;
+  }
+  @if ($v) {
+    align-items: $v;
+  }
+  @if ($w) {
+    flex-wrap: $w;
+  }
 }
 
 // px转换rem
@@ -35,19 +80,24 @@ $popover_bg: rgba(102,102,102, .2);
   font-size: pxTorem(24px);
 }
 
-// 绝对相对
+// 定位
 @mixin position($rel) {
   @if ($rel == 'rel') {
     position: relative;
-  } @else if ($rel == 'abs') {
+  } @else
+  if ($rel == 'abs') {
     position: absolute;
-  } @else if ($rel == 'fix') {
+  } @else
+  if ($rel == 'fix') {
     position: fixed;
-  }  @else if ($rel == 'sta') {
+  } @else
+  if ($rel == 'sta') {
     position: static;
-  }  @else if ($rel == 'sti') {
+  } @else
+  if ($rel == 'sti') {
     position: sticky;
-  }  @else if ($rel == 'inh') {
+  } @else
+  if ($rel == 'inh') {
     position: inherit;
   }
 }

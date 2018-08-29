@@ -1,0 +1,31 @@
+// header
+$header_bg: #069;
+$header_H: $pixel_80;
+$logo_W: $pixel_100 + $pixel_90 + $pixel_70;
+$logo_size: $pixel_30;
+$navHover: #f9f;
+$nav_L: $pixel_100 + $pixel_90 + $pixel_70;
+$nav_R: $pixel_100 * 3;
+$userinfo_W: $pixel_100 * 3;
+
+// 路由的样式
+$active: #99f;
+$route_W: $pixel_80;
+$route_H: $pixel_80;
+$link_i_W: $pixel_50;
+$link_i_H: $pixel_50;
+
+// 侧边栏(左)
+$side_Top: $pixel_80;
+$side_W: $pixel_80;
+$sidebg: #666;
+$sideHover: #9f9;
+
+// wrapper
+$wrapper_Top: $pixel_80;
+$wrapper_Left: $pixel_80;
+
+// 弹出框的遮罩层
+$popover_bg: rgba(102,102,102, .5);
+
+$white: #fff;
