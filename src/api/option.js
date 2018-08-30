@@ -21,7 +21,7 @@ export let lineOption = {
       boundaryGap: false,
       axisLine: {
         lineStyle: {
-          color: '#57617B'
+          color: '#91a0ae'
         }
       },
       data: [
@@ -48,7 +48,7 @@ export let lineOption = {
       },
       axisLine: {
         lineStyle: {
-          color: '#57617B'
+          color: '#91a0ae'
         }
       },
       axisLabel: {
@@ -59,7 +59,7 @@ export let lineOption = {
       },
       splitLine: {
         lineStyle: {
-          color: '#f5f4f9'
+          color: '#f5f5f8'
         }
       }
     }
@@ -68,7 +68,7 @@ export let lineOption = {
 }
 // 柱状图配置项
 export let barOption = {
-  color: ['#3398DB'],
+  color: ['#307aea', '#f67270'],
   tooltip: {
     trigger: 'axis',
     axisPointer: { // 坐标轴指示器，坐标轴触发有效
@@ -89,7 +89,12 @@ export let barOption = {
     }
   },
   yAxis: {
-    type: 'value'
+    type: 'value',
+    splitLine: {
+      lineStyle: {
+        color: '#f5f5f8'
+      }
+    }
   },
   series: {
     name: '直接访问',
@@ -100,27 +105,20 @@ export let barOption = {
 }
 // 饼状图配置项
 export let pieOption = {
-  title: {
-    text: '某站点用户访问来源',
-    subtext: '纯属虚构',
-    x: 'center'
-  },
   color: [
-    '#f99', '#9f9', '#9ff', '#99f', '#f9f'
+    '#30ebc9', '#ffb23b', '#f07376', '#8ab2ed', '#307aea'
   ],
   tooltip: {
     trigger: 'item',
     formatter: "{a} <br/>{b} : {c} ({d}%)"
   },
   legend: {
-    orient: 'vertical',
-    left: 'left',
     data: null
   },
   series: {
     name: '访问来源',
     type: 'pie',
-    radius: '55%',
+    radius: ['50%', '70%'],
     center: [
       '50%', '60%'
     ],
